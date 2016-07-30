@@ -9,22 +9,10 @@ $(document).ready(function()
 
 
 $('.etch').on('mouseenter', '.pixel', function() {
-/*
-	var pColor = getPixelColor($(this));
-	if (pColor - gradient > 0) {
-		pColor -= gradient;
-	} else pColor = 0;
 
-	$(this).css({"background-color": "rgb(" + pColor + ", " + pColor + "," + pColor +")"});
-	console.log($(this).css("background-color"));
-*/
 	darkenPixel($(this));
-});
 
-// Logs x, y coordinates when a pixel is clicked
-$('.etch').on('click', '.pixel', function() {
-	console.log($(this).data("col") + ", " + $(this).data("row"));
-})
+});
 
 $('.bar').on('click', '#reset', function() {
 	var size = prompt("Enter new grid size:");
@@ -34,7 +22,6 @@ $('.bar').on('click', '#reset', function() {
 function createGrid(x, y) {
 	resetGrid();
 
-	// Create our grid
 	for (var row = 0; row < y; row++)
 	{
 		$(".etch").append( '<div class="row" data-row="' + row + '"></div>' );
